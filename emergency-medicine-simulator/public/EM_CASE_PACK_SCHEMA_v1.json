@@ -1,0 +1,806 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "packId": {
+      "type": "string",
+      "maxLength": 100,
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 10000
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 10000
+    },
+    "objectiveCoverage": {
+      "type": "object",
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "maxLength": 100,
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        },
+        "scope": {
+          "type": "string",
+          "enum": [
+            "full_course",
+            "selected_topics"
+          ]
+        },
+        "topicIds": {
+          "minItems": 1,
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9_-]+$"
+          }
+        },
+        "items": {
+          "minItems": 1,
+          "maxItems": 500,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "objectiveId": {
+                "type": "string",
+                "maxLength": 100,
+                "pattern": "^[a-zA-Z0-9_-]+$"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "covered",
+                  "partially_covered",
+                  "intentionally_not_applicable"
+                ]
+              },
+              "caseIds": {
+                "maxItems": 200,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 100,
+                  "pattern": "^[a-zA-Z0-9_-]+$"
+                }
+              },
+              "note": {
+                "description": "Coverage evidence, remaining gaps or a specific reason for non-applicability.",
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10000
+              }
+            },
+            "required": [
+              "objectiveId",
+              "text",
+              "status",
+              "caseIds",
+              "note"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "sourceId",
+        "scope",
+        "topicIds",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "verificationStatus": {
+          "type": "string",
+          "enum": [
+            "not_verified",
+            "partially_verified",
+            "verified"
+          ]
+        },
+        "verificationDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourcesCrossChecked": {
+          "maxItems": 200,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10000
+          }
+        },
+        "referenceVerificationCompleted": {
+          "type": "boolean"
+        },
+        "medicalContentChecked": {
+          "type": "boolean"
+        },
+        "criticalManagementRechecked": {
+          "type": "boolean"
+        },
+        "citationClaimsChecked": {
+          "type": "boolean"
+        },
+        "sourceNotes": {
+          "maxItems": 200,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10000
+          }
+        }
+      },
+      "required": [
+        "verificationStatus",
+        "verificationDate",
+        "sourcesCrossChecked",
+        "referenceVerificationCompleted",
+        "medicalContentChecked",
+        "criticalManagementRechecked",
+        "citationClaimsChecked",
+        "sourceNotes"
+      ],
+      "additionalProperties": false
+    },
+    "topics": {
+      "minItems": 1,
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9_-]+$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10000
+          },
+          "cases": {
+            "minItems": 2,
+            "maxItems": 2,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "maxLength": 100,
+                  "pattern": "^[a-zA-Z0-9_-]+$"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 10000
+                },
+                "difficulty": {
+                  "description": "Clinical difficulty, not Guided/Independent/Challenge learning level.",
+                  "type": "string",
+                  "enum": [
+                    "beginner",
+                    "intermediate",
+                    "advanced"
+                  ]
+                },
+                "interactionModel": {
+                  "description": "New packs use action_based; omitted only for backward-compatible imports.",
+                  "type": "string",
+                  "const": "action_based"
+                },
+                "responseMode": {
+                  "description": "New packs use keyword_written: learners type a response and the engine maps hidden action keywords to the authored action. Omitted for legacy action-choice packs.",
+                  "type": "string",
+                  "const": "keyword_written"
+                },
+                "learningObjectives": {
+                  "minItems": 1,
+                  "maxItems": 20,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 10000
+                  }
+                },
+                "objectiveMappings": {
+                  "minItems": 1,
+                  "maxItems": 100,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "objectiveId": {
+                        "type": "string",
+                        "maxLength": 100,
+                        "pattern": "^[a-zA-Z0-9_-]+$"
+                      },
+                      "stepIds": {
+                        "minItems": 1,
+                        "maxItems": 100,
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "maxLength": 100,
+                          "pattern": "^[a-zA-Z0-9_-]+$"
+                        }
+                      },
+                      "review": {
+                        "description": "End-of-case explanation of how this objective was taught or assessed; not a claim of learner mastery.",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 10000
+                      }
+                    },
+                    "required": [
+                      "objectiveId",
+                      "stepIds",
+                      "review"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "criticalActionGroups": {
+                  "maxItems": 100,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "maxLength": 100,
+                        "pattern": "^[a-zA-Z0-9_-]+$"
+                      },
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 10000
+                      },
+                      "actionIds": {
+                        "minItems": 1,
+                        "maxItems": 100,
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "maxLength": 100,
+                          "pattern": "^[a-zA-Z0-9_-]+$"
+                        }
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "label",
+                      "actionIds"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "demographics": {
+                  "type": "object",
+                  "properties": {
+                    "age": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 120
+                    },
+                    "sex": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10000
+                    },
+                    "context": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10000
+                    }
+                  },
+                  "required": [
+                    "age",
+                    "sex",
+                    "context"
+                  ],
+                  "additionalProperties": false
+                },
+                "initialPresentation": {
+                  "type": "object",
+                  "properties": {
+                    "complaint": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10000
+                    },
+                    "appearance": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10000
+                    },
+                    "condition": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10000
+                    }
+                  },
+                  "required": [
+                    "complaint",
+                    "appearance",
+                    "condition"
+                  ],
+                  "additionalProperties": false
+                },
+                "vitalSigns": {
+                  "minItems": 1,
+                  "maxItems": 20,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 10000
+                      },
+                      "value": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 10000
+                      },
+                      "tone": {
+                        "type": "string",
+                        "enum": [
+                          "normal",
+                          "watch",
+                          "critical"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "label",
+                      "value",
+                      "tone"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "initialStepId": {
+                  "type": "string",
+                  "maxLength": 100,
+                  "pattern": "^[a-zA-Z0-9_-]+$"
+                },
+                "steps": {
+                  "minItems": 1,
+                  "maxItems": 100,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "maxLength": 100,
+                        "pattern": "^[a-zA-Z0-9_-]+$"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "assessment",
+                          "history",
+                          "examination",
+                          "investigation",
+                          "management",
+                          "reassessment",
+                          "disposition"
+                        ]
+                      },
+                      "prompt": {
+                        "description": "Neutral clinical question that is actionable without guidance, visible in all levels.",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 10000
+                      },
+                      "guidance": {
+                        "description": "Reasoning prompt and hint, not the correct answer. Automatic in Guided, on request in Independent, hidden in Challenge.",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 10000
+                      },
+                      "findings": {
+                        "maxItems": 30,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "category": {
+                              "type": "string",
+                              "enum": [
+                                "history",
+                                "examination",
+                                "investigation",
+                                "reassessment"
+                              ]
+                            },
+                            "label": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 10000
+                            },
+                            "text": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 10000
+                            }
+                          },
+                          "required": [
+                            "category",
+                            "label",
+                            "text"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "actions": {
+                        "minItems": 2,
+                        "maxItems": 12,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "maxLength": 100,
+                              "pattern": "^[a-zA-Z0-9_-]+$"
+                            },
+                            "text": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 10000
+                            },
+                            "classification": {
+                              "description": "Evaluation of this action at this clinical stage; not a label in the visible action text.",
+                              "type": "string",
+                              "enum": [
+                                "optimal",
+                                "acceptable",
+                                "incorrect",
+                                "dangerous"
+                              ]
+                            },
+                            "feedback": {
+                              "description": "Explanation of WHY, better alternatives and teaching points. Shown after each submitted keyword-written response in all learning levels; legacy action-choice cases retain their existing mode-specific feedback timing.",
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 10000
+                            },
+                            "consequence": {
+                              "description": "Observable clinical consequence visible in every level. No evaluative coaching or answer keys.",
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 10000
+                            },
+                            "reveals": {
+                              "maxItems": 30,
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "category": {
+                                    "type": "string",
+                                    "enum": [
+                                      "history",
+                                      "examination",
+                                      "investigation",
+                                      "reassessment"
+                                    ]
+                                  },
+                                  "label": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 10000
+                                  },
+                                  "text": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 10000
+                                  }
+                                },
+                                "required": [
+                                  "category",
+                                  "label",
+                                  "text"
+                                ],
+                                "additionalProperties": false
+                              }
+                            },
+                            "patientChanges": {
+                              "type": "object",
+                              "properties": {
+                                "condition": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 10000
+                                },
+                                "vitalSigns": {
+                                  "maxItems": 20,
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "label": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 10000
+                                      },
+                                      "value": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 10000
+                                      },
+                                      "tone": {
+                                        "type": "string",
+                                        "enum": [
+                                          "normal",
+                                          "watch",
+                                          "critical"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "label",
+                                      "value",
+                                      "tone"
+                                    ],
+                                    "additionalProperties": false
+                                  }
+                                }
+                              },
+                              "additionalProperties": false
+                            },
+                            "nextStepId": {
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "maxLength": 100,
+                                  "pattern": "^[a-zA-Z0-9_-]+$"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "answerKeywords": {
+                              "description": "Hidden exact words or phrases that map a written response to this action. Any positive match can count as correct when this action is optimal or acceptable.",
+                              "minItems": 1,
+                              "maxItems": 30,
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 120
+                              }
+                            },
+                            "responseFallback": {
+                              "description": "Exactly one neutral, no-state-change action per step is used when no answer keyword matches.",
+                              "type": "boolean"
+                            },
+                            "category": {
+                              "type": "string",
+                              "enum": [
+                                "assess",
+                                "history",
+                                "examine",
+                                "investigate",
+                                "treat",
+                                "procedure",
+                                "consult",
+                                "disposition"
+                              ]
+                            },
+                            "synonyms": {
+                              "minItems": 1,
+                              "maxItems": 30,
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 10000
+                              }
+                            },
+                            "priority": {
+                              "type": "string",
+                              "enum": [
+                                "immediate",
+                                "urgent",
+                                "routine",
+                                "nonurgent"
+                              ]
+                            },
+                            "critical": {
+                              "type": "boolean"
+                            },
+                            "optional": {
+                              "type": "boolean"
+                            },
+                            "unsafe": {
+                              "type": "boolean"
+                            },
+                            "unnecessary": {
+                              "type": "boolean"
+                            },
+                            "reassessment": {
+                              "type": "boolean"
+                            },
+                            "disposition": {
+                              "type": "boolean"
+                            },
+                            "repeatable": {
+                              "type": "boolean"
+                            },
+                            "requiresReassessment": {
+                              "type": "boolean"
+                            },
+                            "prerequisiteActionIds": {
+                              "maxItems": 100,
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "maxLength": 100,
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                              }
+                            },
+                            "mustPrecedeActionIds": {
+                              "maxItems": 100,
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "maxLength": 100,
+                                "pattern": "^[a-zA-Z0-9_-]+$"
+                              }
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "text",
+                            "classification",
+                            "feedback",
+                            "consequence",
+                            "reveals",
+                            "patientChanges",
+                            "nextStepId"
+                          ],
+                          "additionalProperties": false
+                        }
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "kind",
+                      "prompt",
+                      "guidance",
+                      "findings",
+                      "actions"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "endOfCaseSummary": {
+                  "type": "object",
+                  "properties": {
+                    "diagnosis": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10000
+                    },
+                    "summary": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10000
+                    },
+                    "idealApproach": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10000
+                    },
+                    "disposition": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 10000
+                    },
+                    "learningPoints": {
+                      "minItems": 1,
+                      "maxItems": 30,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 10000
+                      }
+                    },
+                    "references": {
+                      "minItems": 1,
+                      "maxItems": 20,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 10000
+                      }
+                    }
+                  },
+                  "required": [
+                    "diagnosis",
+                    "summary",
+                    "idealApproach",
+                    "disposition",
+                    "learningPoints",
+                    "references"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "title",
+                "difficulty",
+                "learningObjectives",
+                "demographics",
+                "initialPresentation",
+                "vitalSigns",
+                "initialStepId",
+                "steps",
+                "endOfCaseSummary"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "cases"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "packId",
+    "title",
+    "description",
+    "topics"
+  ],
+  "additionalProperties": false,
+  "$id": "urn:emc:case-pack:1.0",
+  "title": "EM Case Pack v1.0",
+  "description": "Additional engine validation enforces globally unique case IDs, unique topic IDs/titles, unique step/action IDs, valid next-step references, full reachability and a disposition ending reachable from every step. Only disposition steps may use nextStepId: null."
+}
