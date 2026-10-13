@@ -1,0 +1,1472 @@
+{
+  "sourceId": "EMED615-2025",
+  "title": "EMED615 Emergency Course — official 2025 blueprint",
+  "notes": [
+    "Stable mapping IDs were assigned by the simulator; they were not printed in the original blueprint.",
+    "Source rows 12 and 13 repeat Cardiogenic Shock with identical objectives; combined into topic T12.",
+    "Other wording, broad topic groups and possible source typos are preserved, not silently corrected.",
+    "Some source paragraphs combine multiple skills; coverage requires addressing the whole objective.",
+    "38 distinct topic groups imply 76 cases for a full-course pack, two per group."
+  ],
+  "courseOutcomes": [
+    {
+      "id": "EMED615-CLO-1-1",
+      "text": "To explain the pathophysiology and presentation of life/organ-threatening diseases."
+    },
+    {
+      "id": "EMED615-CLO-1-2",
+      "text": "To develop a general approach to medical and surgical emergencies."
+    },
+    {
+      "id": "EMED615-CLO-1-3",
+      "text": "To analyze common emergency situations and demonstrate how to manage them."
+    },
+    {
+      "id": "EMED615-CLO-2-1",
+      "text": "Demonstrates behavior that conveys caring, honesty, genuine interest, and tolerance when interacting with a diverse population."
+    },
+    {
+      "id": "EMED615-CLO-2-2",
+      "text": "Demonstrates behavior that conveys punctuality with acknowledgment of the value of time and conveys professional behavior in the emergency department."
+    },
+    {
+      "id": "EMED615-CLO-3-1",
+      "text": "To organize a general approach to medical and surgical emergencies"
+    },
+    {
+      "id": "EMED615-CLO-3-2",
+      "text": "To perform common emergency procedures."
+    }
+  ],
+  "topics": [
+    {
+      "id": "EMED615-T01",
+      "title": "ABC approach",
+      "sourceRows": [
+        1
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T01-O01",
+          "text": "List the hazards that must be considered when approaching an ill or injured person"
+        },
+        {
+          "id": "EMED615-T01-O02",
+          "text": "List the components of the systematic ABCDE Approach to emergency patients"
+        },
+        {
+          "id": "EMED615-T01-O03",
+          "text": "Describe the critical ABCDE actions"
+        },
+        {
+          "id": "EMED615-T01-O04",
+          "text": "List the elements of a SAMPLE history"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T02",
+      "title": "Triage",
+      "sourceRows": [
+        2
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T02-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T02-O02",
+          "text": "Types & Levels"
+        },
+        {
+          "id": "EMED615-T02-O03",
+          "text": "Objective of triage"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T03",
+      "title": "ACS",
+      "sourceRows": [
+        3
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T03-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T03-O02",
+          "text": "ACS spectrum"
+        },
+        {
+          "id": "EMED615-T03-O03",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T03-O04",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T03-O05",
+          "text": "Enzymes & ECG interpretations"
+        },
+        {
+          "id": "EMED615-T03-O06",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T03-O07",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T03-O08",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T04",
+      "title": "Heart Failure",
+      "sourceRows": [
+        4
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T04-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T04-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T04-O03",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T04-O04",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T04-O05",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T04-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T05",
+      "title": "Hypertensive Emergencies",
+      "sourceRows": [
+        5
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T05-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T05-O02",
+          "text": "HTN emergencies Spectrum"
+        },
+        {
+          "id": "EMED615-T05-O03",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T05-O04",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T05-O05",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T05-O06",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T05-O07",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T06",
+      "title": "AAA",
+      "sourceRows": [
+        6
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T06-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T06-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T06-O03",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T06-O04",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T06-O05",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T06-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T07",
+      "title": "DVT",
+      "sourceRows": [
+        7
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T07-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T07-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T07-O03",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T07-O04",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T07-O05",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T07-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T08",
+      "title": "PE",
+      "sourceRows": [
+        8
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T08-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T08-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T08-O03",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T08-O04",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T08-O05",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T08-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T09",
+      "title": "Cardiac Arrest",
+      "sourceRows": [
+        9
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T09-O01",
+          "text": "Recognition of cardiac arrest."
+        },
+        {
+          "id": "EMED615-T09-O02",
+          "text": "Define High-Quality Cardiopulmonary Resuscitation (CPR)"
+        },
+        {
+          "id": "EMED615-T09-O03",
+          "text": "Perform High-Quality CPR"
+        },
+        {
+          "id": "EMED615-T09-O04",
+          "text": "Approaching Deferent cardiac arrest rhythms. (PEA, Asystole, pVT, VF) Knowing reversible causes of cardiac arrest."
+        },
+        {
+          "id": "EMED615-T09-O05",
+          "text": "Electrical Therapy: [Automated external Defibrillator (AED), SYNC Cardioversion, DC Shock, Transcutaneous pacing (TCP)]"
+        },
+        {
+          "id": "EMED615-T09-O06",
+          "text": "Recognize Major Differences between adult, children, and Infants CPR"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T10",
+      "title": "Shock",
+      "sourceRows": [
+        10
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T10-O01",
+          "text": "Define shock"
+        },
+        {
+          "id": "EMED615-T10-O02",
+          "text": "Approaching Undifferentiated shock"
+        },
+        {
+          "id": "EMED615-T10-O03",
+          "text": "Recognize signs of hypoperfusion"
+        },
+        {
+          "id": "EMED615-T10-O04",
+          "text": "Shock Index"
+        },
+        {
+          "id": "EMED615-T10-O05",
+          "text": "Mean Arterial pressure, Cardiac Output"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T11",
+      "title": "Hypovolemic shock / (Hemorrhagic and / Non- Hemorrhagic)",
+      "sourceRows": [
+        11
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T11-O01",
+          "text": "Know various types of vasopressors"
+        },
+        {
+          "id": "EMED615-T11-O02",
+          "text": "Pathophysiology"
+        },
+        {
+          "id": "EMED615-T11-O03",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T11-O04",
+          "text": "Diagnostic workup"
+        },
+        {
+          "id": "EMED615-T11-O05",
+          "text": "Management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T12",
+      "title": "Cardiogenic Shock",
+      "sourceRows": [
+        12,
+        13
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T12-O01",
+          "text": "Pathophysiology"
+        },
+        {
+          "id": "EMED615-T12-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T12-O03",
+          "text": "Diagnostic workup"
+        },
+        {
+          "id": "EMED615-T12-O04",
+          "text": "Management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T14",
+      "title": "Obstructive Shock",
+      "sourceRows": [
+        14
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T14-O01",
+          "text": "Pathophysiology"
+        },
+        {
+          "id": "EMED615-T14-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T14-O03",
+          "text": "Diagnostic workup"
+        },
+        {
+          "id": "EMED615-T14-O04",
+          "text": "Management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T15",
+      "title": "Septic Shock (Distributive)",
+      "sourceRows": [
+        15
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T15-O01",
+          "text": "Pathophysiology"
+        },
+        {
+          "id": "EMED615-T15-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T15-O03",
+          "text": "Diagnostic workup"
+        },
+        {
+          "id": "EMED615-T15-O04",
+          "text": "Management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T16",
+      "title": "Anaphylactic Shock (Distributive)",
+      "sourceRows": [
+        16
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T16-O01",
+          "text": "Pathophysiology"
+        },
+        {
+          "id": "EMED615-T16-O02",
+          "text": "Definitions of Anaphylactic shock"
+        },
+        {
+          "id": "EMED615-T16-O03",
+          "text": "Anaphylaxis Vs. Allergy"
+        },
+        {
+          "id": "EMED615-T16-O04",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T16-O05",
+          "text": "Diagnostic workup"
+        },
+        {
+          "id": "EMED615-T16-O06",
+          "text": "Management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T17",
+      "title": "Neurogenic Shock (Distributive)",
+      "sourceRows": [
+        17
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T17-O01",
+          "text": "Pathophysiology"
+        },
+        {
+          "id": "EMED615-T17-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T17-O03",
+          "text": "Spinal Shock Vs. Neurogenic Shock"
+        },
+        {
+          "id": "EMED615-T17-O04",
+          "text": "Diagnostic workup"
+        },
+        {
+          "id": "EMED615-T17-O05",
+          "text": "Management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T18",
+      "title": "Arrhythmias and AV Blocks",
+      "sourceRows": [
+        18
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T18-O01",
+          "text": "ECG Interpretation"
+        },
+        {
+          "id": "EMED615-T18-O02",
+          "text": "Signs of Instability"
+        },
+        {
+          "id": "EMED615-T18-O03",
+          "text": "Management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T19",
+      "title": "DKA",
+      "sourceRows": [
+        19
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T19-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T19-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T19-O03",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T19-O04",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T19-O05",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T19-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T20",
+      "title": "HHS",
+      "sourceRows": [
+        20
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T20-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T20-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T20-O03",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T20-O04",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T20-O05",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T20-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T21",
+      "title": "Adrenal insufficiency",
+      "sourceRows": [
+        21
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T21-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T21-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T21-O03",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T21-O04",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T21-O05",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T21-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T22",
+      "title": "Hypoglycemia",
+      "sourceRows": [
+        22
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T22-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T22-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T22-O03",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T22-O04",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T22-O05",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T22-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T23",
+      "title": "Thyroid Emergencies",
+      "sourceRows": [
+        23
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T23-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T23-O02",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T23-O03",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T23-O04",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T23-O05",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T23-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T24",
+      "title": "Acid base",
+      "sourceRows": [
+        24
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T24-O01",
+          "text": "Interpretation"
+        },
+        {
+          "id": "EMED615-T24-O02",
+          "text": "DDx"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T25",
+      "title": "Electrolyte imbalance",
+      "sourceRows": [
+        25
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T25-O01",
+          "text": "Na regulation causes and management"
+        },
+        {
+          "id": "EMED615-T25-O02",
+          "text": "K regulation causes and management"
+        },
+        {
+          "id": "EMED615-T25-O03",
+          "text": "Ca regulation causes and management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T26",
+      "title": "Toxicology",
+      "sourceRows": [
+        26
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T26-O01",
+          "text": "Describe the stabilization of the poisoned patient"
+        },
+        {
+          "id": "EMED615-T26-O02",
+          "text": "Perform a risk-based assessment of a poisoned patient"
+        },
+        {
+          "id": "EMED615-T26-O03",
+          "text": "Determine the appropriateness of GI decontamination for a poisoned patient Describe the testing and observation period of a poisoned patient"
+        },
+        {
+          "id": "EMED615-T26-O04",
+          "text": "Approach a patient with paracetamol overdose"
+        },
+        {
+          "id": "EMED615-T26-O05",
+          "text": "Recognition of common toxidromes"
+        },
+        {
+          "id": "EMED615-T26-O06",
+          "text": "Approach to opioid toxicity and ASA"
+        },
+        {
+          "id": "EMED615-T26-O07",
+          "text": "Identifies Toxic alcohol,pathophysiology and management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T27",
+      "title": "Environmental",
+      "sourceRows": [
+        27
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T27-O01",
+          "text": "Exposure to Heat"
+        },
+        {
+          "id": "EMED615-T27-O02",
+          "text": "Rhabdomyalisis causes and management Water-Related Emergencies"
+        },
+        {
+          "id": "EMED615-T27-O03",
+          "text": "CO poisoning"
+        },
+        {
+          "id": "EMED615-T27-O04",
+          "text": "Bites and Stings"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T28",
+      "title": "Pneumonia",
+      "sourceRows": [
+        28
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T28-O01",
+          "text": "Types"
+        },
+        {
+          "id": "EMED615-T28-O02",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T28-O03",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T28-O04",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T28-O05",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T28-O06",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T28-O07",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T29",
+      "title": "BA",
+      "sourceRows": [
+        29
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T29-O01",
+          "text": "Types"
+        },
+        {
+          "id": "EMED615-T29-O02",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T29-O03",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T29-O04",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T29-O05",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T29-O06",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T29-O07",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T30",
+      "title": "COPD",
+      "sourceRows": [
+        30
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T30-O01",
+          "text": "Types"
+        },
+        {
+          "id": "EMED615-T30-O02",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T30-O03",
+          "text": "Clinical presentation"
+        },
+        {
+          "id": "EMED615-T30-O04",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T30-O05",
+          "text": "Complications"
+        },
+        {
+          "id": "EMED615-T30-O06",
+          "text": "ED management"
+        },
+        {
+          "id": "EMED615-T30-O07",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T31",
+      "title": "Rabies / STI / Communicable diseases",
+      "sourceRows": [
+        31
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T31-O01",
+          "text": "Rabid animals"
+        },
+        {
+          "id": "EMED615-T31-O02",
+          "text": "Indications of anti-rabies"
+        },
+        {
+          "id": "EMED615-T31-O03",
+          "text": "Sexual transmission infections (clinical presentation,investigation,management,prevention and complications)"
+        },
+        {
+          "id": "EMED615-T31-O04",
+          "text": "Prevention ,clinical presentation,diagnosis and management. TB, Monkey Box,"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T32",
+      "title": "Trauma",
+      "sourceRows": [
+        32
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T32-O01",
+          "text": "Trauma Evaluation"
+        },
+        {
+          "id": "EMED615-T32-O02",
+          "text": "C-Spine Clearance"
+        },
+        {
+          "id": "EMED615-T32-O03",
+          "text": "Management plans"
+        },
+        {
+          "id": "EMED615-T32-O04",
+          "text": "Disposition Plans"
+        },
+        {
+          "id": "EMED615-T32-O05",
+          "text": "Killers in Trauma/Traumatic Code"
+        },
+        {
+          "id": "EMED615-T32-O06",
+          "text": "Future needs for better Trauma care"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T33",
+      "title": "Stroke / Seizure / CNS infections / NMS (neuro muscular diseases)",
+      "sourceRows": [
+        33
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T33-O01",
+          "text": "Approach patient with Stroke"
+        },
+        {
+          "id": "EMED615-T33-O02",
+          "text": "Ischemic vs Hemorrhagic Stroke"
+        },
+        {
+          "id": "EMED615-T33-O03",
+          "text": "Approach patient with Seizure"
+        },
+        {
+          "id": "EMED615-T33-O04",
+          "text": "CNS infections (meningitis &encephalitis ): Clinical presentation,investigation ,management and complications"
+        },
+        {
+          "id": "EMED615-T33-O05",
+          "text": "Guillain barre syndrome: Types , pathophysiology,diagnosis and management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T34",
+      "title": "Psychiatry",
+      "sourceRows": [
+        34
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T34-O01",
+          "text": "Approach to agitated patients in ED."
+        },
+        {
+          "id": "EMED615-T34-O02",
+          "text": "Approach to suicidal patients."
+        },
+        {
+          "id": "EMED615-T34-O03",
+          "text": "Approach to psychosis disorders"
+        },
+        {
+          "id": "EMED615-T34-O04",
+          "text": "Neuroleptic malignant syndrome: Clinical presentation,causes and management"
+        },
+        {
+          "id": "EMED615-T34-O05",
+          "text": "Serotonin syndrome: Clinical presentation,causes and management"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T35",
+      "title": "GI bleed",
+      "sourceRows": [
+        35
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T35-O01",
+          "text": "Critical bedside actions and general approach"
+        },
+        {
+          "id": "EMED615-T35-O02",
+          "text": "Differential diagnosis"
+        },
+        {
+          "id": "EMED615-T35-O03",
+          "text": "History and physical examination"
+        },
+        {
+          "id": "EMED615-T35-O04",
+          "text": "Emergency diagnostic test"
+        },
+        {
+          "id": "EMED615-T35-O05",
+          "text": "Emergency treatment options"
+        },
+        {
+          "id": "EMED615-T35-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T36",
+      "title": "Mesenteric Ischemia",
+      "sourceRows": [
+        36
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T36-O01",
+          "text": "Critical bedside actions and general approach"
+        },
+        {
+          "id": "EMED615-T36-O02",
+          "text": "Differential diagnosis"
+        },
+        {
+          "id": "EMED615-T36-O03",
+          "text": "History and physical examination"
+        },
+        {
+          "id": "EMED615-T36-O04",
+          "text": "Emergency diagnostic test"
+        },
+        {
+          "id": "EMED615-T36-O05",
+          "text": "Emergency treatment options"
+        },
+        {
+          "id": "EMED615-T36-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T37",
+      "title": "Perforated ischemia",
+      "sourceRows": [
+        37
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T37-O01",
+          "text": "Critical bedside actions and general approach"
+        },
+        {
+          "id": "EMED615-T37-O02",
+          "text": "Differential diagnosis"
+        },
+        {
+          "id": "EMED615-T37-O03",
+          "text": "History and physical examination"
+        },
+        {
+          "id": "EMED615-T37-O04",
+          "text": "Emergency diagnostic test"
+        },
+        {
+          "id": "EMED615-T37-O05",
+          "text": "Emergency treatment options"
+        },
+        {
+          "id": "EMED615-T37-O06",
+          "text": "Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T38",
+      "title": "Febrile neutropenia",
+      "sourceRows": [
+        38
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T38-O01",
+          "text": "Definition"
+        },
+        {
+          "id": "EMED615-T38-O02",
+          "text": "DDx"
+        },
+        {
+          "id": "EMED615-T38-O03",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T38-O04",
+          "text": "Management Disposition"
+        }
+      ]
+    },
+    {
+      "id": "EMED615-T39",
+      "title": "TTP ITP",
+      "sourceRows": [
+        39
+      ],
+      "courseOutcomeIds": [
+        "1.1",
+        "1.2",
+        "1.3"
+      ],
+      "objectives": [
+        {
+          "id": "EMED615-T39-O01",
+          "text": "Pathophysiology"
+        },
+        {
+          "id": "EMED615-T39-O02",
+          "text": "Classifications and causes"
+        },
+        {
+          "id": "EMED615-T39-O03",
+          "text": "DDx"
+        },
+        {
+          "id": "EMED615-T39-O04",
+          "text": "Investigations"
+        },
+        {
+          "id": "EMED615-T39-O05",
+          "text": "Management Disposition"
+        }
+      ]
+    }
+  ]
+}

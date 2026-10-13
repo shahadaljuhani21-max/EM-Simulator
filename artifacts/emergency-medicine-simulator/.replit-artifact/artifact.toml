@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Emergency Medicine Clinical Simulator"
+description = "A responsive interface for medical students to explore emergency medicine learning levels, track placeholder progress, review completed cases, and manage a demo learner profile."
+version = "1.0.0"
+id = "artifacts/emergency-medicine-simulator"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23867
+
+[services.development]
+run = "pnpm --filter @workspace/emergency-medicine-simulator run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/emergency-medicine-simulator", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/emergency-medicine-simulator/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23867"
+BASE_PATH = "/"

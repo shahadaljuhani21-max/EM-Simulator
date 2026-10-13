@@ -1,0 +1,89 @@
+Create a medically accurate Emergency Medicine Clinical Simulator case pack for senior medical students using the attached core source files, template, schema and author guide.
+
+Deliver ONE valid downloadable .json file containing multiple cases, following the supplied structure, schemaVersion "1.0", IDs, required fields and supported classifications exactly. Official objectives are mandatory and included in the core source pack. If they are missing, request the core source files, never lecture slides. Lectures/slides are OPTIONAL; their absence must never block generation. Create exactly two meaningfully different cases per defined topic, not superficial age/number variations. Do not create separate copies for Guided, Independent or Challenge.
+
+SOURCE PRIORITY:
+1. Official course objectives — mandatory scope. Every case maps explicitly to one or more supplied objectives; collectively address the supplied objective list.
+2. Current authoritative medical guidance — mandatory for safety-critical verification, management, doses, contraindications, thresholds and disposition. Prefer current applicable society/government guidance and high-quality evidence.
+3. First Aid — permanent designated study reference for teaching alignment. The supplied context file contains a citation and ORIGINAL study-alignment guidance, NOT the textbook. Do not claim access to or verification of unseen book content. Record that limitation.
+4. Lectures/slides — OPTIONAL additional instructor/exam alignment.
+
+Never fabricate clinical claims, doses, guideline recommendations, references, authors, titles, years, URLs or DOIs. Synthetic patients and investigation values must be clearly fictional, medically plausible and internally coherent; do not imply invented patient results are published evidence.
+
+OBJECTIVE-DRIVEN PLANNING AND COVERAGE:
+Read EM_OFFICIAL_OBJECTIVES_v1.md before drafting. Preserve the supplied objective IDs and wording. They are simulator-assigned stable IDs based on the official blueprint, not new clinical objectives.
+Default to full_course: 38 distinct supplied topic groups, exactly two cases per topic, 76 cases in one JSON. Source rows 12 and 13 are a documented duplicate consolidated under EMED615-T12. Do not silently split broad groups, reinterpret possible source typos or drop hard-to-cover objectives. If the user explicitly asks for a subset, use selected_topics, name its topicIds and audit the entire catalog with honest reasons for exclusions.
+New generated packs MUST include objectiveCoverage with sourceId "EMED615-2025", scope, topicIds and items. Each item has objectiveId, exact text, status (covered / partially_covered / intentionally_not_applicable), caseIds and note. Include ALL 202 topic objectives and ALL 7 course outcomes exactly once, including exclusions. A covered status means the entire objective is addressed; partial means a documented gap, never full coverage. Professional behavior or procedural performance may only be partly assessable in a choice-based simulator; state that honestly.
+Every case MUST include objectiveMappings: an array of {objectiveId, stepIds, review}. stepIds identify the actual decisions teaching/assessing the objective. review explains it at the end, without assuming learner success. Mapping and coverage caseIds must agree in both directions. Use official topic IDs as the pack topic IDs. The structural template uses an EXAMPLE objective only to demonstrate shape; replace it with real supplied objectives.
+Internally review the entire catalog before export, then preserve the audit in objectiveCoverage. Included-topic objectives may not be marked not applicable to hide omissions. Revise cases to close gaps wherever possible; report genuine limitations as partially_covered. Do not label a partial result fully covered. Full-course scope requires all topic groups even when an objective remains partly assessable.
+If length limits prevent completion, work in stages but assemble ONE final JSON; never silently truncate or send separate per-case files. Stay within the simulator's 2 MB upload limit (minify JSON if needed without deleting content). Tell the user if the complete requested scope cannot fit rather than claiming completion.
+
+Design realistic ED encounters centered on "What should I do next?" Stabilize unstable patients before nonurgent history, tests or imaging. Include assessment/ABCDE, focused history/examination, necessary bedside/laboratory/imaging investigations, treatment, monitoring, reassessment, escalation/consultation and disposition as appropriate; do not force every stage into every case. Do not automatically order every test. Include learning objectives, demographics, presentation, vitals with units, coherent action-dependent patient changes, and post-treatment decisions. Never finish immediately after diagnosis or treatment; reach an appropriate disposition endpoint.
+
+Use plausible choices classified only as optimal, acceptable, incorrect or dangerous. Explain WHY for every meaningful action. Do not penalize appropriate alternatives as wrong simply because another choice is preferable. Do not reveal the intended diagnosis in titles or early prompts. Include medications, doses, routes, indications, contraindications and thresholds only when relevant and sufficiently verified.
+
+MANDATORY SEPARATE VERIFICATION — DO NOT EXPORT IMMEDIATELY AFTER DRAFTING
+
+Pass 1: Medical content.
+After writing the cases, separately re-check diagnostic criteria, ED priorities, ABCDE, investigations, interpretation, treatment indications, medication names/doses/routes, contraindications, thresholds, resuscitation, monitoring, reassessment, escalation and disposition. Re-check critical management and doses again. Compare at least two reliable sources for important management decisions and doses whenever possible. If only one authoritative source is available, explicitly identify the recommendation and limitation in sourceNotes; never pretend multiple sources were checked. Do not describe unverified facts as certain.
+
+Pass 2: References.
+After Pass 1, independently revisit every citation. Confirm existence, exact title, organization/authors, publication year, actual URL/DOI destination, authority and support for the attributed clinical claim. Never generate a citation from memory without checking it. Each case must contain references in endOfCaseSummary.references (strings in this schema). Include available author/organization, exact title, publication source, year and verified URL/DOI in each string. Use stable labels such as [R1] within reference strings and cite those same labels in relevant action feedback; ensure every cited label resolves in that case. Do not add unsupported reference-ID properties or change references into objects.
+
+Conflicts:
+Do not hide differences between lectures or reliable sources. Determine the most current, clinically applicable recommendation. Record the discrepancy, sources, chosen approach and reason in metadata.sourceNotes and in relevant educational feedback. Preserve needed exam context without presenting outdated management as current safe practice.
+
+Required metadata for newly generated packs:
+Include the template's metadata object with every field:
+- verificationStatus: "not_verified", "partially_verified", or "verified".
+- verificationDate: actual date the checks were performed, YYYY-MM-DD; null when no verification occurred. Never prefill a date or claim future checks.
+- sourcesCrossChecked: strings identifying the actual sources accessed, their verified bibliographic details and which claims were cross-checked.
+- referenceVerificationCompleted: true only after the separate reference pass.
+- medicalContentChecked: true only after the post-generation medical pass.
+- criticalManagementRechecked: true only after re-checking critical management and doses.
+- citationClaimsChecked: true only after verifying citation-to-claim support.
+- sourceNotes: per-case/step verification notes, single-source limitations, discrepancies and remaining uncertainties. Use [] only when no limitations or discrepancies exist.
+
+These are generator-reported checks, not proof or a guarantee of correctness. Do not copy true flags from an example. Use "verified" only when all checks actually completed, the date and checked sources are recorded, and all relevant limitations are disclosed. If browsing or source access is unavailable, use "not_verified" or "partially_verified" truthfully, report what could not be checked and do not claim full verification.
+
+Mandatory three-level authoring pass — ONE case, ONE clinical truth:
+
+Generate exactly two distinct clinical cases per lecture/topic TOTAL, not two per level. Store each case only once. The simulator reuses it unchanged in Guided (learning), Independent (practice) and Challenge (assessment). Never generate three versions. Level changes support and independence, not medicine: history, examination, diagnosis, results, correct treatment and dose, progression and disposition stay identical for identical choices. Branch on actions, never on level. Clinical difficulty remains beginner/intermediate/advanced, separately from learning level.
+
+Use the existing schema fields; do not invent unsupported properties:
+- case.interactionModel: set to "action_based" for every newly generated case and author all clinical-review metadata required by the schema.
+- case.responseMode: set to "keyword_written" for every newly generated case. The learner types a written response to each step.prompt instead of choosing from a visible action list.
+- step.prompt: a neutral clinical question that can be answered in a short written response.
+- step.guidance: reasoning prompt, focus and useful hint for Guided; available only on request in Independent; hidden in Challenge. Guide thinking without revealing the correct choice. Example: “Think about the immediate threats in the ABCDE assessment. What needs to be checked or treated before obtaining a full history?”
+- action.classification: optimal, acceptable, incorrect or dangerous.
+- action.answerKeywords: hidden, specific words or phrases that map a written response to this action. Add this to every non-fallback action at every step, including clinically wrong or dangerous actions, using phrases that clearly express that action. Include common synonyms and abbreviations. Do not use broad or overlapping terms; keywords must be unique within each step. Matching is whole-phrase, case/accent/punctuation-insensitive, not semantic.
+- action.responseFallback: set true on exactly one additional action per step. This action is selected when no answer keyword matches. It must be classified incorrect, not unsafe, unnecessary or critical, have no answerKeywords, reveals or patientChanges, and have a neutral consequence. Route it to the next safe decision (or terminal disposition). Never worsen the patient merely because an answer did not match.
+- action.feedback: WHY the mapped action's classification applies, important investigation/treatment interpretation, better alternatives and a teaching point where appropriate. Show this explanation after every submitted answer in Guided, Independent and Challenge.
+- action.consequence, reveals and patientChanges: realistic observable information and responses only, never coaching or answer keys. Place requested history, examination and investigations in action.reveals rather than automatically disclosing all results in step.findings.
+- action.nextStepId: shared progression. Encode appropriate prioritization and sequence through the graph. Explain premature/delayed actions in feedback where clinically relevant, and preserve realistic poor-choice consequences.
+- endOfCaseSummary: clinical reasoning, ordered idealApproach, essential actions to check for omissions, unsafe choices and better alternatives, learningPoints and references. The review shows the actual ordered decisions. Static omission advice must be conditional, not falsely personalized.
+
+Keyword scoring contract:
+- Every step in every new case must have exactly one neutral responseFallback action and answerKeywords on every other action. The learner does not see action choices or keywords before submitting.
+- Any one positive answer keyword mapped to an optimal or acceptable action makes that step correct. One response earns at most one correct mark, even if it contains multiple matching terms. The engine prefers optimal, then acceptable, if more than one action matches; incorrect/dangerous matches are considered only when no correct action matches.
+- Phrases close to negation (for example “not,” “without,” “avoid,” or “withhold”) are not counted as positive matches. Keep keywords affirmative and clinically specific. Ensure a right phrase does not appear in a dangerous action's keywords.
+- Use the action's feedback as the explanation for its mapped keyword response. Guided, Independent and Challenge display the answer result, mapped action and explanation immediately after every submitted answer. Challenge must not reveal matched keywords, correctness labels or feedback before the learner submits that response. Clinical consequences and patient changes may still be shown after submission.
+- If no keyword matches, commit the authored neutral responseFallback, record the answer as incorrect, and continue the case. The fallback consequence must state what is clinically observed without adding an invented deterioration or newly available finding.
+- A keyword match is a simple answer-recognition signal, not proof of understanding or a validated clinical assessment. Include clinically meaningful terms and synonyms, and disclose this limitation in the case pack instructions and review.
+
+Guided must genuinely teach reasoning, not just show the answer. Independent must allow realistic management without pre-decision coaching or a required hint; requested help remains optional. Challenge must test clinical management with minimal assistance, not obscure trivia. Audit every during-play field including titles, objectives, prompts, action labels, consequences, findings and condition changes for answer leaks. Keep evaluation in feedback or the debrief, not observable consequences.
+
+The current engine records decision order and classifications, but does not automatically infer every missed action or label all early/late interventions, and has no elapsed-time clinical clock. Support comparison through the authored ideal sequence and context-specific feedback; do not promise unsupported assessment features.
+
+For EVERY major decision ask internally:
+Guided: Is there enough information to teach the learner how to reason through this?
+Independent: Can the learner reasonably manage this without receiving a hint?
+Challenge: Can the simulator evaluate the learner without revealing the answer beforehand?
+If any is NO, revise before export.
+
+Then audit BOTH cases under ALL THREE levels, including poor-choice branches. Verify meaningful Guided teaching; no hint required to progress; realistic information requests; no accidental Challenge answer exposure; appropriate sequencing and consequences; identical underlying medical facts; no level-specific duplicate copies. This authoring audit does not replace medical or reference verification and must not be reported as runtime testing unless actually performed.
+
+Final checklist before export:
+Confirm medical content reviewed after drafting; critical management/doses checked again; references independently checked; citation-to-claim links checked; no fabricated references; exactly two cases per topic; responseMode is keyword_written; every step has exactly one safe neutral responseFallback; all other actions at every step have unique, clinically specific answerKeywords; feedback explains each mapped action; exactly two cases per topic; unique topic/case IDs and unique step/action IDs in scope; every next-step link resolves; every step reachable and able to reach a disposition ending; no trapped loops; all required fields present; physiologically coherent investigations and progression; appropriate sequencing, reassessment and endpoints. Validate JSON syntax and the supplied JSON schema, then validate the documented graph, answer-key and metadata rules. Do not claim software validation unless actually run.
+
+The final output is the completed downloadable .json case pack, not an essay. It is educational material requiring qualified clinical review, not a prescribing protocol or guarantee of safe clinical care.
